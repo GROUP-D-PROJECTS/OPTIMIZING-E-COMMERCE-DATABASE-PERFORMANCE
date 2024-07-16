@@ -1,12 +1,12 @@
 # OPTIMIZING-E-COMMERCE-DATABASE-PERFORMANCE
 # class project
-
+git clone https://github.com/GROUP-D-PROJECTS/OPTIMIZING-E-COMMERCE-DATABASE-PERFORMANCE
+cd online_retail
  # technology used
-Node.js
-Express.js
-PostgreSQL
-Swagger (swagger-jsdoc, swagger-ui-express)
-Other relevant technologies specific to your implementation 
+1. Node.js
+2. Express.js
+3. PostgreSQL
+4. Swagger (swagger-jsdoc, swagger-ui-express)
 
 # Features
 CRUD operations for products
@@ -15,13 +15,19 @@ Database optimization techniques (stored procedures, triggers)
 Performance analysis and improvements
 
 # installation
-Installing Node.js and npm
-Installing PostgreSQL
-Installing dependencies in node.js
+1. Installing Node.js and express
+2. Installing PostgreSQL
+3. Installing dependencies in node.js
      npm install express pg dotenv
-    npm install --save-dev nodemon
-Starting the server (node src/index.js) or npm start 
+     npm install --save-dev nodemon
+4. Starting the server (node src/index.js) or npm start 
 
 # API Documentation
 Provide a link to access the Swagger documentation:
-Swagger UI: http://localhost:3009/api-docs
+Swagger UI: http://localhost:3009/api-docs 
+
+# Usage
+use the swagger page to post, get, update, delete products
+alternatively use link (http://localhost:3009/api-docs/#/Products/post_products)
+replace "post_products" with your purpose link 
+
