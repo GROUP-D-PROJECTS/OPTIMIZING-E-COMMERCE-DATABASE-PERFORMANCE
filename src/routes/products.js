@@ -14,13 +14,10 @@ const productsController = require('../controllers/productController');
  *       properties:
  *         id:
  *           type: integer
- *           description: The auto-generated id of the product
  *         name:
  *           type: string
- *           description: The name of the product
  *         price:
  *           type: number
- *           description: The price of the product
  *       example:
  *         id: 1
  *         name: Product A
@@ -31,18 +28,18 @@ const productsController = require('../controllers/productController');
  * @swagger
  * tags:
  *   name: Products
- *   description: The products managing API
+ *   description: Product management API
  */
 
 /**
  * @swagger
  * /products:
  *   get:
- *     summary: Returns the list of all the products
+ *     summary: List all products
  *     tags: [Products]
  *     responses:
  *       200:
- *         description: The list of the products
+ *         description: List of products
  *         content:
  *           application/json:
  *             schema:
@@ -56,24 +53,23 @@ router.get('/', productsController.getAllProducts);
  * @swagger
  * /products/{id}:
  *   get:
- *     summary: Get the product by id
+ *     summary: Get a product by id
  *     tags: [Products]
  *     parameters:
  *       - in: path
  *         name: id
+ *         required: true
  *         schema:
  *           type: integer
- *         required: true
- *         description: The product id
  *     responses:
  *       200:
- *         description: The product description by id
- *         contents:
+ *         description: Product details
+ *         content:
  *           application/json:
  *             schema:
  *               $ref: '#/components/schemas/Product'
  *       404:
- *         description: The product was not found
+ *         description: Product not found
  */
 router.get('/:id', productsController.getProductById);
 
@@ -91,13 +87,13 @@ router.get('/:id', productsController.getProductById);
  *             $ref: '#/components/schemas/Product'
  *     responses:
  *       200:
- *         description: The product was successfully created
+ *         description: Created product
  *         content:
  *           application/json:
  *             schema:
  *               $ref: '#/components/schemas/Product'
  *       500:
- *         description: Some server error
+ *         description: Server error
  */
 router.post('/', productsController.createProduct);
 
@@ -105,15 +101,14 @@ router.post('/', productsController.createProduct);
  * @swagger
  * /products/{id}:
  *   put:
- *     summary: Update the product by the id
+ *     summary: Update a product
  *     tags: [Products]
  *     parameters:
  *       - in: path
  *         name: id
+ *         required: true
  *         schema:
  *           type: integer
- *         required: true
- *         description: The product id
  *     requestBody:
  *       required: true
  *       content:
@@ -122,15 +117,15 @@ router.post('/', productsController.createProduct);
  *             $ref: '#/components/schemas/Product'
  *     responses:
  *       200:
- *         description: The product was updated
+ *         description: Updated product
  *         content:
  *           application/json:
  *             schema:
  *               $ref: '#/components/schemas/Product'
  *       404:
- *         description: The product was not found
+ *         description: Product not found
  *       500:
- *         description: Some error happened
+ *         description: Server error
  */
 router.put('/:id', productsController.updateProduct);
 
@@ -138,20 +133,19 @@ router.put('/:id', productsController.updateProduct);
  * @swagger
  * /products/{id}:
  *   delete:
- *     summary: Remove the product by id
+ *     summary: Delete a product
  *     tags: [Products]
  *     parameters:
  *       - in: path
  *         name: id
+ *         required: true
  *         schema:
  *           type: integer
- *         required: true
- *         description: The product id
  *     responses:
  *       200:
- *         description: The product was deleted
+ *         description: Product deleted
  *       404:
- *         description: The product was not found
+ *         description: Product not found
  */
 router.delete('/:id', productsController.deleteProduct);
 

@@ -45,7 +45,7 @@ const Customer = sequelize.define('Customer', {
   },
 }, {
   tableName: 'customers',
-  timestamps: false, // Since your table doesn't have timestamp columns
+  timestamps: true, // Since your table doesn't have timestamp columns
 });
 
 module.exports = Customer;
