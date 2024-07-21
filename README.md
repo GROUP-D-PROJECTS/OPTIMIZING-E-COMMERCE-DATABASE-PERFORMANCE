@@ -17,10 +17,13 @@ Performance analysis and improvements
 # installation
 1. Installing Node.js and express
 2. Installing PostgreSQL
-3. Installing dependencies in node.js
+   .first create database called retail_best
+   .then in node.js run node scripts/populateDb.js
+   .remember to replace database password with yours
+4. Installing dependencies in node.js
      npm install express pg dotenv
      npm install --save-dev nodemon
-4. Starting the server (node src/index.js) or npm start 
+5. Starting the server (node src/index.js) or npm start 
 
 # API Documentation
 Provide a link to access the Swagger documentation:
